@@ -6,7 +6,8 @@
     <title>Matematika Ustoz</title>
     <style>
         body {
-            background: linear-gradient(135deg, #3d2616 0%, #a67c52 100%);
+            /* Qizil rangli gradient */
+            background: linear-gradient(135deg, #8b0000 0%, #ff4500 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -17,12 +18,11 @@
             padding: 20px 0;
         }
 
-        /* Harakatlanuvchi raqamlar */
         .moving-numbers { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; overflow: hidden; }
         .num { position: absolute; color: rgba(255, 255, 255, 0.08); font-size: 2rem; font-weight: bold; animation: float 10s infinite linear; }
         @keyframes float { 0% { transform: translateY(110vh); opacity: 0; } 50% { opacity: 0.5; } 100% { transform: translateY(-10vh); opacity: 0; } }
 
-        /* Rasmni chap burchakka joylash */
+        /* Rasm chap burchakda */
         .ustoz-photo {
             position: absolute;
             top: 15px;
@@ -33,7 +33,7 @@
             border: 4px solid rgba(255, 255, 255, 0.4);
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
             object-fit: cover;
-            z-index: 20; /* Boshqa elementlardan ustun turishi uchun */
+            z-index: 20;
         }
 
         .menu-btn { position: absolute; top: 30px; right: 20px; cursor: pointer; z-index: 100; }
@@ -54,13 +54,13 @@
 
         .option-btn { width: 100%; padding: 15px; margin: 10px 0; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 15px; color: white; font-size: 16px; cursor: pointer; transition: 0.3s; }
         .option-btn:active { transform: scale(0.98); }
-        .correct { background-color: #8b4513 !important; border-color: #a0522d !important; box-shadow: 0 0 10px #a0522d; }
-        .wrong { background-color: #5d4037 !important; border-color: #4e342e !important; }
+        .correct { background-color: #8b0000 !important; border-color: #ff4500 !important; box-shadow: 0 0 10px #ff4500; }
+        .wrong { background-color: #4a0000 !important; border-color: #800000 !important; }
     </style>
 </head>
 <body>
 
-    <img src="html.jpg" alt="Ustoz" class="ustoz-photo" onerror="this.style.display='none'">
+    <img src="html.jpg" alt="Ustoz" class="ustoz-photo">
 
     <div class="moving-numbers">
         <span class="num" style="left:10%; animation-delay:0s">1</span>
@@ -171,4 +171,4 @@
         loadQuestion();
     </script>
 </body>
-</html></html>
+</html>
