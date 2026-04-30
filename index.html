@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabiat Manzaralari</title>
+    <title>UzSuv Ma'lumotnoma</title>
     <style>
         body, html {
             margin: 0;
@@ -11,16 +11,15 @@
             height: 100%;
             overflow: hidden;
             background-color: #000;
+            font-family: 'Poppins', sans-serif;
         }
 
-        /* Slayder konteyneri */
         .slider {
             position: relative;
             width: 100%;
             height: 100vh;
         }
 
-        /* Har bir manzara uchun qatlam */
         .slide {
             position: absolute;
             top: 0;
@@ -28,7 +27,7 @@
             width: 100%;
             height: 100%;
             opacity: 0;
-            transition: opacity 2s ease-in-out;
+            transition: opacity 2.5s ease-in-out;
             background-size: cover;
             background-position: center;
         }
@@ -37,28 +36,81 @@
             opacity: 1;
         }
 
-        /* Overlay - manzarani biroz chuqurlashtirish uchun */
-        .overlay {
+        .ui-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle, transparent 20%, rgba(0,0,0,0.3) 80%);
-            pointer-events: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            background: radial-gradient(circle, transparent 20%, rgba(0,0,0,0.3) 100%);
+        }
+
+        .info-btn {
+            padding: 22px 45px;
+            font-size: 18px;
+            font-weight: 500;
+            color: white;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 60px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            text-align: center;
+        }
+
+        .info-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+            border-color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 4px;
+        }
+
+        /* Muallif yozuvi uchun dizayn */
+        .footer-credit {
+            position: absolute;
+            bottom: 20px;
+            right: 30px;
+            color: rgba(255, 255, 255, 0.4); /* Xira oq rang */
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            z-index: 20;
+            font-weight: 300;
+            pointer-events: none; /* Tugmalarga xalaqit bermasligi uchun */
+        }
+
+        .footer-credit b {
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
         }
     </style>
 </head>
 <body>
 
     <div class="slider">
-        <!-- Manzaralar ro'yxati -->
-        <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1920&q=80');"></div>
-        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=1920&q=80');"></div>
-        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1920&q=80');"></div>
         <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80');"></div>
-        
-        <div class="overlay"></div>
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1500627845660-c71d23b49a27?auto=format&fit=crop&w=1920&q=80');"></div>
+
+        <div class="ui-overlay">
+            <a href="https://cabinet.uzsuv.uz/login" class="info-btn">Maʼlumotnoma olish</a>
+        </div>
+
+        <!-- Pastki burchakdagi yozuv -->
+        <div class="footer-credit">
+            Ishlab chiqaruvchi: <b>Jasurbek</b>
+        </div>
     </div>
 
     <script>
@@ -71,8 +123,7 @@
             slides[currentSlide].classList.add('active');
         }
 
-        // Har 5 soniyada manzarani avtomatik almashtirish
-        setInterval(nextSlide, 5000);
+        setInterval(nextSlide, 7000);
     </script>
 </body>
 </html>
